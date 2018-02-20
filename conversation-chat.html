@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar>
+    <ion-list>
+      <ion-title>
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="user.fotoUsuario" alt="">
+          </ion-avatar>
+          <ion-row >
+            <ion-col col-auto>
+              <h2>{{user.nome}}</h2>
+            </ion-col>
+            <ion-col [hidden]="!isTyping" class="isTyping">
+              <span style="color: #fc0">
+                 {{'CHAT.ESCREVENDO' | translate}}
+              </span>
+              <span>
+                <div class="typing-loader"></div>
+              </span>
+            </ion-col>
+          </ion-row>
+          <icon-chat></icon-chat>
+        </ion-item>
+      </ion-title>
+    </ion-list>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid class="conversation">
+    <ion-list>
+
+      <ion-item *ngFor="let msg of messages" text-wrap [ngClass]="msg.type" text-right col-10 push-2>
+        <ion-avatar item-end>
+        </ion-avatar>
+        <span>
+          {{msg.message}}
+          <br>
+          <small>
+            {{msg.timeSent | date: "HH:mm"}}
+          </small>
+        </span>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="typing-text">
+        <ion-col col-1 *ngIf="micConversation" class='mic-chat'>
+          <button>
+            <ion-icon name="mic" (click)="listenForSpeech()"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-10 >
+          <ion-input autosize max="200" placeholder="Digite sua Mensagem" [(ngModel)]="msg" (keypress)="submitMessage($event, msg)"
+            (keyup)="setTyping($event, true)" class="input-typing"></ion-input>
+        </ion-col>
+        <ion-col col-1 class='mic-chat'>
+
+          <button (click)="sendChatMessage(msg)">
+            <ion-icon name='send'></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

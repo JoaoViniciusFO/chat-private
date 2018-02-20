@@ -1,0 +1,178 @@
+page-conversation-chat {
+    
+    ion-content{
+        background: #fff !important;
+    }
+    
+    .input-typing{
+        padding: 10px;
+    }
+ 
+    
+    ion-title{
+        ion-item{
+            background: none !important;
+            h2{
+            color: #fff !important;
+            }
+        }
+    }
+    .item-inner,ion-item{
+        border: none !important;
+        padding: 0 !important;
+    }
+    .conversation{
+        ion-item{
+            margin-top:10px !important;
+        }
+
+        .conversationLeft{
+            span{
+            display: table-cell;
+            background: #ecf2f0 !important;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+        }
+
+        .conversationRight{
+            span{
+                padding: 10px;
+                display: table-cell;
+                background: $padraoVerdeAqua;
+                text-align: right;
+                position: relative !important;
+                right: 0 !important;
+                float: right;
+                color: #fff !important;
+                display: block;
+                border-radius: 5px;
+            }
+        }
+    }
+
+    .mic-chat{
+        padding: 15px 0;
+        // margin: 0 !important;
+        // padding: 0 !important;
+        text-align: center;
+        background: $padraoVerdeAqua;
+        // color: #fff !important;
+        // button{
+        // font-size: 20px !important;
+        //     color: #fff !important;
+        //     margin: 8px !important;
+        //     padding: 0 !important;
+        // }
+    }
+    .typing-text{
+        background: #ecf2f0;
+    }
+
+    .platform-android {
+      .mic-conversation {
+        display: block;
+      }
+    }
+    
+    .platform-core {
+      .mic-conversation {
+        display: none !important;
+      }
+    }
+
+    ion-toolbar{
+        .toolbar-background, .toolbar-background-ios{
+            border: none !important;
+        background: none !important;
+        }
+        button{
+        background: $padraoVerdeAqua !important;
+        font-size: 30px !important;
+        padding-left: 15px;
+        padding-right: 15px;
+            
+        }
+    }
+
+    .isTyping{
+        display: flex;
+        align-items: center;
+        span{
+        padding-left: 10px;
+
+        }
+    }
+
+    .typing-loader{
+        margin: 5px;
+        width: 6px;
+        height: 6px;
+        -webkit-animation: line 1s linear infinite alternate;
+    -moz-animation: line 1s linear infinite alternate;
+    animation: line 1s linear infinite alternate;
+    }
+    @-webkit-keyframes line{
+        0%{
+        
+            background-color: #fc0;
+            box-shadow: 12px 0px 0px 0px #ff0, 
+                        24px 0px 0px 0px #ffc;
+                        
+        }
+        25%{ 
+                background-color: #ffc;
+                box-shadow: 12px 0px 0px 0px #fc0, 
+                        24px 0px 0px 0px #ff0;
+                        
+        }
+        75%{ background-color: #ff0;
+            box-shadow: 12px 0px 0px 0px #ffc, 
+                        24px 0px 0px 0px #fc0;
+                    
+        }
+    }
+
+    @-moz-keyframes line{
+       0%{
+        
+            background-color: #fc0;
+            box-shadow: 12px 0px 0px 0px #ff0, 
+                        24px 0px 0px 0px #ffc;
+                        
+        }
+        25%{ 
+                background-color: #ffc;
+                box-shadow: 12px 0px 0px 0px #fc0, 
+                        24px 0px 0px 0px #ff0;
+                        
+        }
+        75%{ background-color: #ff0;
+            box-shadow: 12px 0px 0px 0px #ffc, 
+                        24px 0px 0px 0px #fc0;
+                    
+        }
+    }
+
+    @keyframes line{
+         0%{
+        
+            background-color: #fc0;
+            box-shadow: 12px 0px 0px 0px #ff0, 
+                        24px 0px 0px 0px #ffc;
+                        
+        }
+        25%{ 
+                background-color: #ffc;
+                box-shadow: 12px 0px 0px 0px #fc0, 
+                        24px 0px 0px 0px #ff0;
+                        
+        }
+        75%{ background-color: #ff0;
+            box-shadow: 12px 0px 0px 0px #ffc, 
+                        24px 0px 0px 0px #fc0;
+                    
+        }
+    }
+}
